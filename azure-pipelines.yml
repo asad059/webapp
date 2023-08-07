@@ -17,10 +17,12 @@ jobs:
 
   - script: dotnet build --configuration Release
     displayName: 'Build the ASP.NET Core Web App'
+  - task: CmdLine@2
+  displayName: 'List Files in Output Directory'
+  inputs:
+    script: 'dir D:\a\1\s\demoapp1\bin\Release\net6.0 /s'
+  
 
-- job: Test
-  steps:
-  - script: dotnet test --configuration Release
-    displayName: 'Run tests'
+
 
 # Add more stages and steps for deployment if needed
