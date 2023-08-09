@@ -23,7 +23,7 @@ jobs:
 
   - task: CopyFiles@2
     inputs:
-     contents: '_buildOutput/**'
+     contents: 'D:\a\1\s\demoapp1\bin\Release\net6.0/**'
      targetFolder: $(Build.ArtifactStagingDirectory)
 
   - task: PublishBuildArtifacts@1
