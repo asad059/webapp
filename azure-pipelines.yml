@@ -21,7 +21,15 @@ jobs:
     displayName: 'List Files in Output Directory'
   -  script: 'dir D:\a\1\s\demoapp1\bin\Release\net6.0 /s'
 
+  - task: CopyFiles@2
+    inputs:
+     contents: '_buildOutput/**'
+     targetFolder: $(Build.ArtifactStagingDirectory)
 
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathToPublish: $(Build.ArtifactStagingDirectory)
+      artifactName: MyBuildOutputs
 
 
 # Add more stages and steps for deployment if needed
